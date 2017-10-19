@@ -1,4 +1,9 @@
+# Credits
+
+this project is based in the development published in the repo https://github.com/JoeHogan/angular-risk-matrix
+
 # angular-risk-matrix
+
 A simple Risk Matrix chart for AngularJS
 
 ### Demo
