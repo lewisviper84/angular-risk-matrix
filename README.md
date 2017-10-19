@@ -1,6 +1,6 @@
 # Credits
 
-this project is based in the development published in the repo https://github.com/JoeHogan/angular-risk-matrix
+this project is based in the development published in the repo https://github.com/JoeHogan/angular-risk-matrix by Joseph Hogan
 
 # angular-risk-matrix
 
