@@ -14,8 +14,8 @@ A simple Risk Matrix chart for AngularJS
 Include the JS and CSS files for the plugin:
 
 ```
-<link href="css/angular-risk-matrix.min.css" rel="stylesheet">
-<script src="js/angular-risk-matrix.min.js"></script>
+<link href="css/angular-risk-matrix.css" rel="stylesheet">
+<script src="js/angular-risk-matrix.js"></script>
 ```
 
 Add the module dependency in your AngularJS app:
