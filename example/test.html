@@ -1,1 +1,107 @@
+<html>
+	<head>
+		
+		<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="css/tether/tether.min.css">
+		<link rel="stylesheet" href="css/bootstrap/bootstrap-theme.css">
+		<link rel="stylesheet" href="css/custom/bootstrap.custom.css">
+		<link rel="stylesheet" href="css/app/app.css">		
+		
+		<link rel="stylesheet" href="css/riskmatrix/angular-risk-matrix.css">
+	
+		<script src="js/angularjs/angular.js"></script>		
+		<script src="js/angularjs/i18n/angular-locale_es-co.js"></script>	
+		<script src="js/angularjs/angular-sanitize.min.js"></script>
+		<script src="js/angularjs/angular-animate.min.js"></script>			
+		<script src="js/angularjs/angular-messages.js"></script>	
+		<script src="js/angularjs/angular-message-format.js"></script>	
+		<script src="js/angularjs/angular-aria.js"></script>	
+		<script src="js/angularjs/angular-touch.js"></script>
+		<script src="js/angularjs/angular-cookies.js"></script>
+		
+		<script src="js/riskmatrix/angular-risk-matrix.js"></script>
+		
+		<script type="text/javascript">
+			var app = angular.module("myApp", ['riskMatrix']);
 
+			app.controller("myCtrl", function($scope) {
+			  $scope.data = {};
+
+			  $scope.data.risks = [{
+				Id: 1,
+				title: 'AAAA',
+				RiskLikelihood: '1',
+				RiskImpact: '1'
+			  }, {
+				Id: 2,
+				title: 'CADCD',
+				RiskLikelihood: '1',
+				RiskImpact: '2'
+			  }, {
+				Id: 3,
+				RiskLikelihood: '2',
+				RiskImpact: '3'
+			  }, {
+				Id: 4,
+				RiskLikelihood: '7',
+				RiskImpact: '5'
+			  },
+			  {
+			  Id: 5,
+				RiskLikelihood: '2',
+				RiskImpact: '3'
+			  },
+			  {
+				Id: 6,
+				RiskLikelihood: '1',
+				RiskImpact: '5'
+			  },
+			  {
+				Id: 7,
+				RiskLikelihood: '1',
+				RiskImpact: '5'
+			  },
+			  {
+				Id: 8,
+				RiskLikelihood: '5',
+				RiskImpact: '1'
+			  }
+			  ];
+			  
+			 $scope.data.config = {
+				likelihoodtitle : 'Probabilidad',
+				impacttitle : 'Impacto',
+				legendX : ['Insignificante','Menor','Moderado','Mayor','Catastrófico','text1','text3','text4'],
+				legendY : ['Extremadamente Improbable','Improbable','Algo Probable','Probable','Muy Probable','AAAA','....','Otra Cat']
+			}
+
+			  $scope.data.likelihoodValues = [
+					'1', '2', '3', '4', '5','6','7'
+			  ];
+
+			  $scope.data.impactValues = [
+					'1', '2', '3', '4', '5','6','7'
+			  ];
+
+			});
+		</script>
+	</head>
+	<body>
+		<div ng-app="myApp">
+		  <div ng-controller="myCtrl">
+			<div style="position:absolute;top:50px;left:100px;width:500px;">				
+				<risk-matrix data="data.risks" likelihood="data.likelihoodValues" impact="data.impactValues" config="data.config"></risk-matrix>				
+			</div>			
+			<div class="my-data">
+				<!--
+				<div ng-repeat="r in data.risks | orderBy:'Id'">
+					<span ng-bind="'Risk: '+r.Id"></span>
+					<select ng-model="r.RiskLikelihood" ng-options="o as o for o in data.likelihoodValues"></select>
+					<select ng-model="r.RiskImpact" ng-options="o as o for o in data.impactValues"></select>
+				</div>
+				-->
+			</div>
+		  </div>
+		</div>		
+	</body>
+</html>
